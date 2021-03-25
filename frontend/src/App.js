@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Menu } from 'antd';
+import "antd/dist/antd.css"
+import ListaPessoas from './components/ListaPessoas';
+
+const { Header, Content, Footer } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Layout className="layout">
+        <Header>
+          <div className="logo" />
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+            <Menu.Item key="1">Home</Menu.Item>
+            {/* <Menu.Item key="2">nav 2</Menu.Item> */}
+          </Menu>
+        </Header>
+        <Content style={{ padding: '0 50px' }}>
+          <div className="site-layout-content">
+            <ListaPessoas></ListaPessoas>
+          </div>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>eVaccine - Fullstack Week</Footer>
+      </Layout>
     </div>
   );
 }
